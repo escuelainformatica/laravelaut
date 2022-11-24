@@ -19,6 +19,5 @@ Route::controller(UsuarioController::class)->group(function () {
     Route::any('/login', 'login')->name('login');
     Route::any('/ingreso', 'ingreso')->middleware(['auth','can:escribir']); // solo los que tienen permiso de escribir
     Route::any('/listado', 'listado')->middleware(['auth','can:leer']); // quiero que todos pueden ingresar
-
-    Route::any('/ingresoadmin', 'ingreso')->middleware(['auth','role:admin']);
+    Route::any('/ingresoadmin', 'ingreso')->middleware(['auth','role:admin']); // solo los que tienen el rol admin
 });
