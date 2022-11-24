@@ -137,3 +137,5 @@ Para ello cree lo siguiente
 7. Cree un par de usuarios
 8. Cree una página de login (puede copiar la de este ejemplo)
 9. Y cree dos páginas para el ejemplo
+10. Agregue en el kernel las librerias
+11. Y modifique el enrutamiento.
