@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 class UsuarioController extends Controller
 {
     public function login(Request $request) {
+
         if ($request->get('boton', '') === 'Login') {
             $credentials = $request->validate([
                 'email' => ['required', 'email'],
@@ -15,9 +16,9 @@ class UsuarioController extends Controller
             ]);
             if (Auth::attempt($credentials)) {
                 $request->session()->regenerate();
-                return redirect()->intended('/ingreso');
+                return redirect('/',302,['razon'=>'ok']);
             }
-            return back()->withErrors([
+            return back(302,['razon'=>'fallo'])->withErrors([
                 'email' => 'The provided credentials do not match our records.',
             ])->onlyInput('email');
         }

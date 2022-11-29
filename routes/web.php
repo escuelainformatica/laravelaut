@@ -13,7 +13,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::any('/',function() {
+    return "ok";
+});
 
 Route::controller(UsuarioController::class)->group(function () {
     Route::any('/login', 'login')->name('login');
