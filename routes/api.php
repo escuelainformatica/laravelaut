@@ -15,7 +15,10 @@ use Illuminate\Support\Facades\Route;
 */
 // UsuarioAPIController
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+// abilities = el usuario tiene que tener todas las habilidades indicadas.
+// ability = el usuario debe tener por lo menos una.
+
+Route::middleware(['auth:sanctum','ability:leer,editar'])->get('/user', function (Request $request) {
     return $request->user();
 });
 
